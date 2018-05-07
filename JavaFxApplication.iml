@@ -14,5 +14,6 @@
     <orderEntry type="library" name="org.glassfish.jersey.core:jersey-client:2.27" level="project" />
     <orderEntry type="library" name="org.glassfish.jersey.inject:jersey-hk2:2.27" level="project" />
     <orderEntry type="library" name="javax.activation:activation:1.1.1" level="project" />
+    <orderEntry type="library" name="jfoenix-8.0.4" level="project" />
   </component>
 </module>

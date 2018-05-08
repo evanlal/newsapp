@@ -33,7 +33,7 @@ public class Article {
             DateFormat iso8601 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
             this.publishedAt = iso8601.parse(newsApiArticle.getPublishedAt());
         } catch (ParseException e) {
-            e.printStackTrace();
+            this.publishedAt = null;
         }
 
         if (this.urlToImage != null) {

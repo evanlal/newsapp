@@ -1,5 +1,7 @@
 package NewsApiWrapper;
 
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -39,11 +41,13 @@ public class ApiRequest {
     }
 
     public void setFrom(Date from) {
-        this.from = from.toString();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        this.from = sdf.format(from);
     }
 
     public void setTo(Date to) {
-        this.to = to.toString();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        this.to = sdf.format(to);
     }
 
     public void setLang(Lang lang) {

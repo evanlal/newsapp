@@ -39,8 +39,10 @@ public class ArticleCell extends Parent {
         this.source.setText(article.getSource().getName());
         this.title.setText(article.getTitle());
 
-        SimpleDateFormat sdf = new SimpleDateFormat("EE dd MMM YYYY, HH:mm");
-        this.publishedAt.setText(sdf.format(article.getPublishedAt()));
+        if (article.getPublishedAt() != null) {
+            SimpleDateFormat sdf = new SimpleDateFormat("EE dd MMM YYYY, HH:mm");
+            this.publishedAt.setText(sdf.format(article.getPublishedAt()));
+        }
 
         if (article.getUrlToImage() != null) {
             //Image img = new Image(article.getUrlToImage(), 150, 150, true, true);

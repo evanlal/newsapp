@@ -53,7 +53,6 @@ public class EverythingEndpoint extends ArticlesEndpoint {
             webTarget = webTarget.queryParam("page", apiRequest.getPage());
         }
 
-
         return webTarget;
     }
 }

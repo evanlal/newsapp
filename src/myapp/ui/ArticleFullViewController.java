@@ -39,7 +39,7 @@ public class ArticleFullViewController {
         publishedAt.setText(article.getPublishedAt().toString());
         source.setText(article.getSource().getName());
         author.setText(article.getAuthor());
-        image.setImage(new Image(article.getUrlToImage(), 500, 500, true, true));
+        image.setImage(new Image(article.getUrlToImage(), 600, 600, true, true));
         description.setText(article.getDescription());
         url.setText(article.getUrl());
     }

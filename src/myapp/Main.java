@@ -39,9 +39,10 @@ public class Main extends Application {
         newsReaderController.initModel(newsReader);
 
 
-        Scene scene = new Scene(root, 1200, 600);
+        Scene scene = new Scene(root, 1400, 600);
         scene.getStylesheets().add(Main.class.getResource("/css/jfoenix-fonts.css").toExternalForm());
         scene.getStylesheets().add(Main.class.getResource("/css/jfoenix-design.css").toExternalForm());
+        scene.getStylesheets().add(Main.class.getResource("ui/css/list-view.css").toExternalForm());
 
 
 

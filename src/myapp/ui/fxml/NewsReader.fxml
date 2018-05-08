@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<BorderPane stylesheets="@../css/list-view.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="300.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="myapp.ui.NewsReaderController">
+    <left>
+        <VBox prefWidth="150">
+            <Text text="Button 1"></Text>
+            <Text text="Button 1"></Text>
+            <Text text="Button 1"></Text>
+        </VBox>
+    </left>
+    <center>
+        <fx:include fx:id="articleList" source="ArticleList.fxml"/>
+    </center>
+    <right>
+        <fx:include fx:id="articleFullView" source="ArticleFullView.fxml"/>
+    </right>
+</BorderPane>

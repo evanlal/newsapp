@@ -1,5 +1,7 @@
 package myapp.model;
 
+import javafx.scene.image.Image;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,6 +17,7 @@ public class Article {
     private String description;
     private String url;
     private String urlToImage;
+    private Image thumbnail;
     private Date publishedAt;
 
 
@@ -31,6 +34,17 @@ public class Article {
             this.publishedAt = iso8601.parse(newsApiArticle.getPublishedAt());
         } catch (ParseException e) {
             e.printStackTrace();
+        }
+
+        if (this.urlToImage != null) {
+            try {
+                this.thumbnail = new Image(urlToImage, 150, 150, true, true);
+            }catch (IllegalArgumentException e) {
+                System.out.println(urlToImage);
+                this.thumbnail = null;
+            }
+        } else {
+            this.thumbnail = null;
         }
     }
 
@@ -60,6 +74,10 @@ public class Article {
 
     public Source getSource() {
         return source;
+    }
+
+    public Image getThumbnail() {
+        return thumbnail;
     }
 
     @Override

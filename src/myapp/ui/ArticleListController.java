@@ -3,19 +3,18 @@ package myapp.ui;
 import com.jfoenix.controls.JFXListCell;
 import com.jfoenix.controls.JFXListView;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import myapp.model.Article;
 
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
 
-public class ArticleListController implements Initializable{
+public class ArticleListController {
+    NewsReaderController newsReaderController;
+
     @FXML
     JFXListView<Article> articlesListView;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    @FXML
+    private void initialize() {
+        System.out.println("list init");
 
         articlesListView.setCellFactory(articlesListView -> {
             ArticleCell articleCell = new ArticleCell();
@@ -38,8 +37,11 @@ public class ArticleListController implements Initializable{
         });
     }
 
-    public void populate(List<Article> articles) {
-        this.articlesListView.getItems().setAll(articles);
-        System.out.println("populating");
+    public void injectMasterController(NewsReaderController newsReaderController) {
+        this.newsReaderController = newsReaderController;
+    }
+
+    public JFXListView<Article> getArticlesListView() {
+        return articlesListView;
     }
 }

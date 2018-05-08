@@ -92,6 +92,16 @@
     -fx-font-size: 14.0px;
 }
 
+.fv-title-label {
+    -fx-font-size: 18.0px;
+    -fx-font-weight: BOLD;
+    -fx-text-fill: rgba(0.0, 0.0, 0.0, 0.87);
+}
+
+.fv-description {
+    -fx-font-size: 16.0px;
+}
+
 
 
 

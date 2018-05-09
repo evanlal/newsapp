@@ -1,11 +1,11 @@
-package myapp.ui;
+package NewsApp.ui;
 
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import myapp.model.Article;
-import myapp.model.NewsReader;
+import NewsApp.model.Article;
+import NewsApp.model.NewsReader;
 
 import java.util.Date;
 

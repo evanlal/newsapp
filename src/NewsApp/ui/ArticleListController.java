@@ -1,4 +1,4 @@
-package myapp.ui;
+package NewsApp.ui;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListCell;
@@ -7,7 +7,7 @@ import com.jfoenix.controls.JFXProgressBar;
 import javafx.fxml.FXML;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.layout.AnchorPane;
-import myapp.model.Article;
+import NewsApp.model.Article;
 
 /**
  * Controller for the main list view

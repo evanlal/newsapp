@@ -9,7 +9,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
       prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="myapp.ui.MainMenuController">
+      fx:controller="NewsApp.ui.MainMenuController">
    <children>
       <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #11998e;">
          <children>

@@ -1,4 +1,4 @@
-package myapp.model;
+package NewsApp.model;
 
 import NewsApiWrapper.*;
 import javafx.collections.FXCollections;

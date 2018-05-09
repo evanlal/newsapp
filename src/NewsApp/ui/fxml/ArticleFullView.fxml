@@ -7,7 +7,7 @@
 <?import javafx.scene.text.TextFlow?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="myapp.ui.ArticleFullViewController"
+      fx:controller="NewsApp.ui.ArticleFullViewController"
       prefWidth="600.0">
 
         <ImageView fx:id="image"></ImageView>

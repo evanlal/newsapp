@@ -1,4 +1,4 @@
-package myapp;
+package NewsApp;
 
 import NewsApiWrapper.NewsApi;
 import javafx.application.Application;
@@ -6,8 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import myapp.model.NewsReader;
-import myapp.ui.NewsReaderController;
+import NewsApp.model.NewsReader;
+import NewsApp.ui.NewsReaderController;
 
 public class Main extends Application {
 

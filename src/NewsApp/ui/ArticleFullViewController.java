@@ -1,11 +1,11 @@
-package myapp.ui;
+package NewsApp.ui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import myapp.model.Article;
+import NewsApp.model.Article;
 
 /**
  * Controller for the Full View

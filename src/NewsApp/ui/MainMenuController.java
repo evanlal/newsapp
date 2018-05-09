@@ -1,4 +1,4 @@
-package myapp.ui;
+package NewsApp.ui;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;

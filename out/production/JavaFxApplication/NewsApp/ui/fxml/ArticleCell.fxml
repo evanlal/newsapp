@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.TextFlow?>
+<GridPane fx:id="gridPane" prefHeight="100" prefWidth="500" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1"
+hgap="10">
+    <VBox GridPane.columnIndex="1">
+        <ImageView fx:id="image" />
+    </VBox>
+    <VBox GridPane.columnIndex="2">
+        <Label fx:id="title" wrapText="true" styleClass="title-label"/>
+        <Label fx:id="publishedAt" styleClass="published-at-label"/>
+        <Label fx:id="source" styleClass="source-label" />
+    </VBox>
+</GridPane>

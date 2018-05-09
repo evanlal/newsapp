@@ -12,6 +12,7 @@ public class NewsReader {
     private final ObservableList<Article> articlesList = FXCollections.observableArrayList();
     private final int PAGE_SIZE = 20;
     private ApiRequest lastApiRequest;
+    private ArticlesApiResponse lastArticlesApiResponse;
 
 
     public NewsReader(NewsApi newsApi) {
@@ -30,11 +31,23 @@ public class NewsReader {
     }
 
     public ObservableList<Article> getEverything(String q, Date fromDate, Date toDate, int page) {
+        if (page < 1) {
+            throw new IllegalArgumentException("Page must be greater than 1");
+        }
+
+        // Don't exceed page limits
+        if (page > 1 && page > getTotalPages(lastArticlesApiResponse)) {
+            return null;
+        }
+
         ApiRequest apiRequest = constructRequest(q, fromDate, toDate, page);
-
         ArticlesApiResponse articlesApiResponse = newsApi.sendEverythingRequest(apiRequest);
-
         mapResponseToArticles(articlesApiResponse);
+
+        // Cache last request, and response
+        // Useful for pagination
+        lastApiRequest = apiRequest;
+        lastArticlesApiResponse = articlesApiResponse;
 
         return articlesList;
     }
@@ -63,9 +76,6 @@ public class NewsReader {
         // Lang has to be set
         // Remove if multilingual
         apiRequest.setLang(Lang.EN);
-
-        // Cache last request
-        lastApiRequest = apiRequest;
 
         return apiRequest;
     }

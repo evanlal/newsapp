@@ -20,6 +20,7 @@ public class NewsReaderController {
     @FXML
     private MainMenuController mainMenuController;
 
+    private int visitedPages;
 
     public void initModel(NewsReader newsReader) {
         // Allow to init model only once
@@ -50,10 +51,13 @@ public class NewsReaderController {
     }
 
     public void searchNews(String term, Date fromDate, Date toDate) {
+        // Reset visited pages
+        visitedPages = 0;
+
         Task<ObservableList<Article>> task = new Task<ObservableList<Article>>() {
             @Override
             protected ObservableList<Article> call() throws Exception {
-                return newsReader.getEverything(term, fromDate, toDate);
+                return newsReader.getEverything(term, fromDate, toDate, 1);
             }
         };
 
@@ -99,7 +103,7 @@ public class NewsReaderController {
     }
 
     public void showMoreResults() {
-        
+
     }
 
     public void updateFullView(Article article) {

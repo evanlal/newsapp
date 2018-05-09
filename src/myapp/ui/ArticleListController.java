@@ -10,7 +10,7 @@ import myapp.model.Article;
 
 
 public class ArticleListController {
-    NewsReaderController newsReaderController;
+    private NewsReaderController newsReaderController;
 
     @FXML
     AnchorPane listWrapper;

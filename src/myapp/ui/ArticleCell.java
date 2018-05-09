@@ -11,7 +11,10 @@ import myapp.model.Article;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
-public class ArticleCell extends Parent {
+/**
+ * Controller for an Article Cell inside the main list view
+ */
+public class ArticleCell {
     @FXML
     private GridPane gridPane;
     @FXML
@@ -35,6 +38,10 @@ public class ArticleCell extends Parent {
 
     }
 
+    /**
+     * Sets the content of an Article Cell
+     * @param article
+     */
     public void setContent(Article article) {
         this.source.setText(article.getSource().getName());
         this.title.setText(article.getTitle());

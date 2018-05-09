@@ -10,6 +10,10 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
+/**
+ * Controller for the search bar.
+ * The search bar appear only when requested.
+ */
 public class SearchBarController {
     NewsReaderController newsReaderController;
 
@@ -27,15 +31,6 @@ public class SearchBarController {
     @FXML
     private void initialize() {
         this.setVisibility(false);
-    }
-
-    public void injectMasterController(NewsReaderController newsReaderController) {
-        this.newsReaderController = newsReaderController;
-    }
-
-    public void setVisibility(boolean visibility) {
-        searchSection.setVisible(visibility);
-        searchSection.setManaged(visibility);
     }
 
     @FXML
@@ -65,5 +60,14 @@ public class SearchBarController {
     @FXML
     private void clearSearchResults() {
         newsReaderController.clearResults();
+    }
+
+    public void injectMasterController(NewsReaderController newsReaderController) {
+        this.newsReaderController = newsReaderController;
+    }
+
+    public void setVisibility(boolean visibility) {
+        searchSection.setVisible(visibility);
+        searchSection.setManaged(visibility);
     }
 }

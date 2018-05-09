@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane fx:id="listWrapper" minHeight="400.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myapp.ui.ArticleListController">
-    <JFXListView fx:id="articlesListView" onMouseClicked="#mouseClickHandler" onScrollFinished="#scrollFinishedHandler" minHeight="400.0" minWidth="600" prefHeight="600.0" styleClass="custom-jfx-list-view1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <JFXListView fx:id="articlesListView" minHeight="400.0" minWidth="600" onMouseClicked="#listClickHandler" prefHeight="600.0" styleClass="custom-jfx-list-view1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
     <JFXProgressBar fx:id="progressBar" layoutX="7.0" layoutY="7.0" prefHeight="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+   <JFXButton fx:id="loadMoreButton" layoutX="256.0" layoutY="555.0" onMouseClicked="#loadMoreClickHandler" text="Load more" AnchorPane.bottomAnchor="0.0" />
 </AnchorPane>

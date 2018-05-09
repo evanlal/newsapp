@@ -2,7 +2,8 @@ package myapp.model;
 
 
 /**
- * A news Source object
+ * A news source object
+ * TODO: Add source functionallity
  */
 public class Source {
     private String id;
@@ -13,6 +14,10 @@ public class Source {
     private String language;
     private String country;
 
+    /**
+     * Convert a NewsApiSource to a Source object
+     * @param newsApiSource
+     */
     public Source(NewsApiWrapper.Source newsApiSource) {
         this.id = newsApiSource.getId();
         this.name = newsApiSource.getName();

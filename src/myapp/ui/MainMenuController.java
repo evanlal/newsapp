@@ -3,6 +3,9 @@ package myapp.ui;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 
+/**
+ * Controller for the Main Menu
+ */
 public class MainMenuController {
     NewsReaderController newsReaderController;
 
@@ -17,12 +20,12 @@ public class MainMenuController {
 
     @FXML
     private void breakingNewsButtonClicked() {
-        newsReaderController.setSearchBarVisibility(false);
+        newsReaderController.setSearchVisibility(false);
         newsReaderController.fetchBreakingNews();
     }
 
     @FXML
     private void searchNewsButtonClicked() {
-        newsReaderController.setSearchBarVisibility(true);
+        newsReaderController.setSearchVisibility(true);
     }
 }

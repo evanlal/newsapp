@@ -1,5 +1,6 @@
 package myapp.ui;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListCell;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXProgressBar;
@@ -8,26 +9,36 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.layout.AnchorPane;
 import myapp.model.Article;
 
-
+/**
+ * Controller for the main list view
+ */
 public class ArticleListController {
     private NewsReaderController newsReaderController;
 
     @FXML
-    AnchorPane listWrapper;
+    private AnchorPane listWrapper;
     @FXML
-    JFXListView<Article> articlesListView;
+    private JFXListView<Article> articlesListView;
     @FXML
-    JFXProgressBar progressBar;
+    private JFXProgressBar progressBar;
+    @FXML
+    private JFXButton loadMoreButton;
 
     @FXML
     private void initialize() {
         articlesListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         progressBar.setVisible(false);
+        loadMoreButton.setVisible(false);
 
+        // Custom list view cell factory
         articlesListView.setCellFactory(articlesListView -> {
+
+            // Important - Create the cells only once!
             ArticleCell articleCell = new ArticleCell();
             JFXListCell<Article> cell = new JFXListCell<Article>() {
 
+                // Only ypdate the content of the cells,
+                // don't create them inside updateItem
                 @Override
                 protected void updateItem(Article article, boolean empty) {
                     super.updateItem(article, empty);
@@ -46,15 +57,15 @@ public class ArticleListController {
     }
 
     @FXML
-    private void mouseClickHandler() {
+    private void listClickHandler() {
         newsReaderController.updateFullView(
                 articlesListView.getSelectionModel().getSelectedItem()
         );
     }
 
     @FXML
-    private void scrollFinishedHandler() {
-        newsReaderController.showMoreResults();
+    private void loadMoreClickHandler() {
+        newsReaderController.loadMoreSearchResults();
     }
 
     public void injectMasterController(NewsReaderController newsReaderController) {
@@ -67,5 +78,9 @@ public class ArticleListController {
 
     public JFXProgressBar getProgressBar() {
         return progressBar;
+    }
+
+    public JFXButton getLoadMoreButton() {
+        return loadMoreButton;
     }
 }

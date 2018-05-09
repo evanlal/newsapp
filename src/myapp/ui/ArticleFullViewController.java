@@ -7,6 +7,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import myapp.model.Article;
 
+/**
+ * Controller for the Full View
+ */
 public class ArticleFullViewController {
     NewsReaderController newsReaderController;
 
@@ -29,11 +32,10 @@ public class ArticleFullViewController {
         this.newsReaderController = newsReaderController;
     }
 
-    @FXML
-    private void initialise() {
-
-    }
-
+    /**
+     * Sets the Article to be displayed in Full View
+     * @param article
+     */
     public void setArticle(Article article) {
         title.setText(article.getTitle());
         publishedAt.setText(article.getPublishedAt().toString());

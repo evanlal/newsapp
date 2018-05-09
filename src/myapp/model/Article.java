@@ -21,6 +21,12 @@ public class Article {
     private Date publishedAt;
 
 
+    /**
+     * Convert a NewsApiArticle to an Article object
+     * TODO: Account for irregularities in the API, like null or empty strings
+     * TODO: Consider various date formats present in the API
+     * @param newsApiArticle
+     */
     public Article(NewsApiWrapper.Article newsApiArticle) {
         this.source = new Source(newsApiArticle.getSource());
         this.author = newsApiArticle.getAuthor();

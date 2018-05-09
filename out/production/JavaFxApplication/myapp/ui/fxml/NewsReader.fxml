@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.Text?>
-<BorderPane stylesheets="@../css/list-view.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+<BorderPane stylesheets="@../css/custom.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
             minWidth="-Infinity" prefHeight="300.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="myapp.ui.NewsReaderController">
     <left>

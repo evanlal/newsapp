@@ -20,7 +20,7 @@
             </Text>
          </children>
       </StackPane>
-      <JFXButton fx:id="breakingNewsButton" prefHeight="50.0" prefWidth="210.0" text="Breaking News" />
+      <JFXButton fx:id="breakingNewsButton" onMouseClicked="#breakingNewsButtonClicked" prefHeight="50.0" prefWidth="210.0" text="Breaking News" />
       <JFXButton fx:id="searchNewsButton" onMouseClicked="#searchNewsButtonClicked" prefHeight="50.0" prefWidth="204.0" text="Find News" />
    </children>
 </VBox>

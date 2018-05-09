@@ -12,7 +12,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0" spacing="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
          <children>
-            <JFXTextField fx:id="searchField" promptText="Search Term" />
+            <JFXTextField fx:id="searchField" promptText="Search term" onKeyPressed="#clearSearchResults"  />
             <JFXDatePicker fx:id="fromDatePicker" promptText="From" />
             <JFXDatePicker fx:id="toDatePicker" promptText="To" />
          </children>

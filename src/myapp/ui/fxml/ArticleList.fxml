@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXListView?>
-<?import javafx.scene.layout.BorderPane?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<!--onMouseClicked="#handleClickListView"/>-->
-
-
-<JFXListView fx:id="articlesListView" minHeight="400.0" prefHeight="600.0" styleClass="custom-jfx-list-view1" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myapp.ui.ArticleListController" />
+<AnchorPane fx:id="listWrapper" minHeight="400.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myapp.ui.ArticleListController">
+    <JFXListView fx:id="articlesListView" onMouseClicked="#mouseClickHandler" onScrollFinished="#scrollFinishedHandler" minHeight="400.0" minWidth="600" prefHeight="600.0" styleClass="custom-jfx-list-view1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <JFXProgressBar fx:id="progressBar" layoutX="7.0" layoutY="7.0" prefHeight="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+</AnchorPane>

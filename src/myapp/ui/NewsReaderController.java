@@ -1,5 +1,7 @@
 package myapp.ui;
 
+import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.SelectionMode;
 import myapp.model.Article;
@@ -27,23 +29,16 @@ public class NewsReaderController {
 
         this.newsReader = newsReader;
 
-        // Populate view
-        articleListController.getArticlesListView().getItems().setAll(newsReader.getBreakingNews());
-        articleListController.getArticlesListView().getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        fetchBreakingNews();
     }
 
     @FXML
     private void initialize() {
+        // Inject controller where needed
         articleListController.injectMasterController(this);
         articleFullViewController.injectMasterController(this);
         searchBarController.injectMasterController(this);
         mainMenuController.injectMasterController(this);
-
-        // Event listeners
-        articleListController.getArticlesListView().getSelectionModel().selectedItemProperty()
-                .addListener(((observable, oldValue, newValue) -> {
-            articleFullViewController.setArticle(newValue);
-        }));
     }
 
     public Article getSelectedArticle() {
@@ -52,12 +47,66 @@ public class NewsReaderController {
 
     public void setSearchBarVisibility(boolean visibility) {
         searchBarController.setVisibility(visibility);
-        articleListController.getArticlesListView().getItems().clear();
     }
 
     public void searchNews(String term, Date fromDate, Date toDate) {
-        articleListController.getArticlesListView().getItems()
-                .setAll(newsReader.getEverything(term, fromDate, toDate));
+        Task<ObservableList<Article>> task = new Task<ObservableList<Article>>() {
+            @Override
+            protected ObservableList<Article> call() throws Exception {
+                return newsReader.getEverything(term, fromDate, toDate);
+            }
+        };
 
+        // Progress bar
+        task.setOnScheduled(e -> {
+            articleListController.getProgressBar().setVisible(true);
+        });
+
+        task.setOnSucceeded(e -> {
+            articleListController.getProgressBar().setVisible(false);
+        });
+
+
+        // Bindings
+        articleListController.getArticlesListView().itemsProperty().bind(task.valueProperty());
+        articleListController.getProgressBar().progressProperty().bind(task.progressProperty());
+
+        new Thread(task).start();
+    }
+
+    public void fetchBreakingNews() {
+        Task<ObservableList<Article>> task = new Task<ObservableList<Article>>() {
+            @Override
+            protected ObservableList<Article> call() throws Exception {
+                return newsReader.getBreakingNews();
+            }
+        };
+
+        // Progress bar
+        task.setOnScheduled(e -> {
+            articleListController.getProgressBar().setVisible(true);
+        });
+
+        task.setOnSucceeded(e -> {
+            articleListController.getProgressBar().setVisible(false);
+        });
+
+        // Bindings
+        articleListController.getArticlesListView().itemsProperty().bind(task.valueProperty());
+        articleListController.getProgressBar().progressProperty().bind(task.progressProperty());
+
+        new Thread(task).start();
+    }
+
+    public void showMoreResults() {
+        
+    }
+
+    public void updateFullView(Article article) {
+        articleFullViewController.setArticle(article);
+    }
+
+    public void clearResults() {
+        articleListController.getArticlesListView().getItems().clear();
     }
 }

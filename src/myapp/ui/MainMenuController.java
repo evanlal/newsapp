@@ -1,12 +1,7 @@
 package myapp.ui;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDrawer;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.VBox;
-
-import java.io.IOException;
 
 public class MainMenuController {
     NewsReaderController newsReaderController;
@@ -18,6 +13,12 @@ public class MainMenuController {
 
     public void injectMasterController(NewsReaderController newsReaderController) {
         this.newsReaderController = newsReaderController;
+    }
+
+    @FXML
+    private void breakingNewsButtonClicked() {
+        newsReaderController.setSearchBarVisibility(false);
+        newsReaderController.fetchBreakingNews();
     }
 
     @FXML

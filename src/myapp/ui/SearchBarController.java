@@ -61,4 +61,9 @@ public class SearchBarController {
 
         newsReaderController.searchNews(question, fromDate, toDate);
     }
+
+    @FXML
+    private void clearSearchResults() {
+        newsReaderController.clearResults();
+    }
 }

@@ -2,8 +2,9 @@
 A prototype news application.  
 Content from the NewsApi.org (https://newsapi.org).
 
-![GUI 1](imgs/img1.jpg?raw=true "Title")
-![GUI 2](imgs/img2.jpg?raw=true "Title")
+[[https://github.com/evanlal/newsapp/blob/master/img/newsapp_1.png|alt=newsapp screenshot]]
+
+[[https://github.com/evanlal/newsapp/blob/master/img/newsapp_2.png|alt=newsapp screenshot]]
 
 ## Development
 Java, JavaFX, FXML, CSS  
@@ -18,16 +19,16 @@ The UI is a composition of different elements. Each element has each own control
 
 Reference the oracle example for nesting multiple controllers: https://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html#nested_controllers  
 
-For the List View component, Cell Factory to customize the cells. The custom cell has to be created outside the updateItem() function, because with a tiny scroll all cells are recreated. Instead, the cells are created before, and only their content is set during the update. The thumbnails are generated before as well, otherwise they are fetched from the API each time.  
+For the List View component, Cell Factory is used to customize the cells. The custom cell has to be created outside the updateItem() function, because with a tiny scroll all cells are recreated. Instead, the cells are created before, and only their content is set during the update. The thumbnails are generated before as well, otherwise they are fetched from the API each time.  
 
 The API call must use separate threads, so the application remains responsive in the meantime. To simulate infinite the news list is not overwritten, but updated with each new call. The list view must be updated only by the main thread due to JavaFX restrictions, so the updating needs to happen with Process.run_later inside the task.  
 
 Next steps include using a dependency injection framework like Google Guice for the GUI app.
 
 ## Libraries
-* Java.ws.rs package used to communicate with the NewsApi.org.  
-* Google json used to parse the API results.    
-* Jfoenix used for styling.  
+* Java.ws.rs package - used to communicate with the NewsApi.org.  
+* Google json - used to parse the API results.    
+* Jfoenix - used for styling.  
 
 ## Author
 
@@ -35,5 +36,5 @@ Next steps include using a dependency injection framework like Google Guice for 
 
 ## License
 Written by Evan Lalopoulos <evan.lalopoulos.2017@my.bristol.ac.uk>    
-Copyright (C) - All Rights Reserved  
-Unauthorized copying of this file is strictly prohibited  
+Copyright (C) - All rights reserved.  
+Unauthorized copying of this file is strictly prohibited.  

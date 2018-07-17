@@ -2,9 +2,8 @@
 A prototype news application.  
 Content from the NewsApi.org (https://newsapi.org).
 
-[[https://github.com/evanlal/newsapp/blob/master/img/newsapp_1.png|alt=newsapp screenshot]]
-
-[[https://github.com/evanlal/newsapp/blob/master/img/newsapp_2.png|alt=newsapp screenshot]]
+![Screenshot 1](img/newsapp_1.png "desc")
+![Screenshot 2](img/newsapp_2.png "desc")
 
 ## Development
 Java, JavaFX, FXML, CSS  
